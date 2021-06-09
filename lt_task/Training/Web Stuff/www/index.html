@@ -1,0 +1,62 @@
+<html>
+<head>
+	<style>
+		.gametype-form {
+			border: 1px solid black;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span>Select Task</span><br><br>
+		<form class="gametype-form">
+			<input type="radio" name="gameType" value="rocketgame" checked="checked">Rocket Game A<br><br>
+			<input type="radio" name="gameType" value="rocketgameB" checked="checked">Rocket Game B<br><br>
+			<input type="radio" name="gameType" value="rockettest" checked="checked">Rocket Test<br><br>
+			<input type="radio" name="gameType" value="secretcode" checked="checked">Secret Code A<br><br>
+			<input type="radio" name="gameType" value="secretcodeB" checked="checked">Secret Code B<br><br>
+			<input type="radio" name="gameType" value="secretcodetest" checked="checked">Secret Code Test<br><br>
+		</form>
+	</div>
+
+	<div>
+		<input id="idInput" type="text" placeholder="Enter ID"></input>
+		<button id="startButton">Start</button>
+	</div>
+	<script>
+		var startButton = document.getElementById("startButton");
+		var idInput = document.getElementById("idInput");
+
+		startButton.addEventListener("click", function(evt) {
+			var id = idInput.value;
+
+			// Ensure there is an id. Just print an error to the log for now
+			if (!id) {
+				console.error("No ID entered");
+			}
+
+			// Get the selected gameType
+			var gameType = getGameType();
+
+			//console.error("Starting game with ID", id, "and gameType", gameType);
+
+			// Create the URL and redirect
+			var url = gameType + ".html?id=" + encodeURIComponent(id);
+
+			console.error("redirect to", url);
+			window.open(url);
+		});
+
+		function getGameType() {
+			var radios = document.getElementsByName('gameType');
+			for (var i = 0, length = radios.length; i < length; i++) {
+				if (radios[i].checked) {
+					return radios[i].value;
+					break;
+				}
+			}
+		}
+	</script>
+</body>
+</head>

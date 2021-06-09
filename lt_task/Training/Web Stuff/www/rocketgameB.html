@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<script>
+			var go = function(RocketGameB) {
+				var start = new RocketGameB();
+				start.experimentBegin();
+			};
+		</script>
+	<script data-main="lib/requireMain" src="lib/require.js" post-config="require(['js/RocketGameB.js'], function(RocketGameB) {go(RocketGameB)});"></script>
+	</head>
+</html>
