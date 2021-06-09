@@ -10,8 +10,8 @@ When learning new concepts, students tend to use either exemplar-based learning 
 
 # Task files (saved in lt_task)
 - Participants in this study are asked to complete two tasks 
-  - Session I : Training (Task: Training, written in javascript)
-  - Session II: Learner classifications (task: Learner_classification, written in python)
+  - Session I : Training (Exemplar-focused vs. Rule-focused training tasks)
+  - Session II: Learner classifications (identify individuals into three categories: exemplar, rule, and non learners)
   
   
 
